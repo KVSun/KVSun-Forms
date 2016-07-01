@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Submit Obituary</title>
+		<title>Classified Ad</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="stylesheets/styles/import.css" media="all" />
 		<script src="scripts/custom.js" async></script>
@@ -10,18 +10,18 @@
 		<nav id="nav"></nav>
 		<form name="classified" method="post" class="tabbed">
 			<datalist id="classified_cityList">
-				<option value="Bodfish"></option>
-				<option value="Caliente"></option>
-				<option value="Canebrake"></option>
-				<option value="Havilah"></option>
-				<option value="Kernville"></option>
-				<option value="Lake Isabella"></option>
-				<option value="Mt. Mesa"></option>
-				<option value="Onyx"></option>
-				<option value="South Lake"></option>
-				<option value="Squirrel Valley"></option>
-				<option value="Weldon"></option>
-				<option value="Wofford Heights"></option>
+				<option value="Bodfish">Bodfish</option>
+				<option value="Caliente">Caliente</option>
+				<option value="Canebrake">Canebrake</option>
+				<option value="Havilah">Havilah</option>
+				<option value="Kernville">Kernville</option>
+				<option value="Lake Isabella">Lake Isabella</option>
+				<option value="Mt. Mesa">Mt. Mesa</option>
+				<option value="Onyx">Onyx</option>
+				<option value="South Lake">South Lake</option>
+				<option value="Squirrel Valley">Squirrel Valley</option>
+				<option value="Weldon">Weldon</option>
+				<option value="Wofford Heights">Wofford Heights</option>
 			</datalist>
 			<fieldset id="classified_info">
 				<legend>Ad Info</legend>
@@ -43,7 +43,7 @@
 				<input type="text" name="classified[billing][name]" id="classified_billing_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
 				<br />
 				<label for="classified_billing_city">City</label>
-				<input type="text" name="classified[billing][city]" id="classified_billing_city" placeholder="City Name" list="letter-to-the-editor_cityList" pattern="[A-z \.]+" required />
+				<input type="text" name="classified[billing][city]" id="classified_billing_city" placeholder="City Name" list="classified_cityList" pattern="[A-z \.]+" required />
 				<br />
 				<label for="classified_billing_state">State or Province</label>
 				<select name="classified[billing][state]" id="classified_billing_state">

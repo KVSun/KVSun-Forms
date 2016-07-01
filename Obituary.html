@@ -9,13 +9,16 @@
 	<body>
 		<nav id="nav"></nav>
 		<form name="obituary" method="post" class="tabbed">
+			<fieldset id="obituary_text">
+				<legend>Obituary</legend>
+				<textarea name="obituary[text]" cols="80" rows="35" required></textarea>
+				<br />
+				<a href="#obituary_deceased" role="button">Next</a>
+			</fieldset>
 			<fieldset id="obituary_deceased">
 				<legend>Deceased</legend>
 				<label for="obituary_deceased_name">Name:</label>
 				<input type="text" name="obituary[deceased][name]" id="obituary_deceased_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" autofocus required />
-				<br />
-				<label for="obituary_deceased_obituary">Obituary</label>
-				<textarea name="obituary[deceased][obituary]" required></textarea>
 				<br />
 				<label for="obituary_deceased_birthDate">Date of Death:</label>
 				<input type="date" name="obituary[deceased][birthDate]" id="obituary_deceased_birthDate" placeholder="2016-06-30" />
@@ -23,7 +26,6 @@
 				<label for="obituary_deceased_deathDate">Date of Death:</label>
 				<input type="date" name="obituary[deceased][deathDate]" id="obituary_deceased_deathDate" placeholder="2016-06-30" />
 				<br />
-				<!-- <em>There is an additional $5 charge for a photo</em> -->
 				<label for="obituary_deceased_usePhoto"><em>Add a photo for $5?</em></label>
 				<input type="checkbox" name="obituary[deceased][usePhoto]" data-visibility-target="#obit_photo" />
 				<br />
@@ -31,6 +33,7 @@
 					<label for="obituary_deceased_photo">Photo:</label>
 					<input type="file" name="obituary[deceased][photo]" id="obituary_deceased_photo" accept="image/*" placeholder="Upload image" />
 				</div>
+				<a href="#obituary_text" role="button">Prev</a>
 				<a href="#obituary_contact" role="button">Next</a>
 			</fieldset>
 			<fieldset id="obituary_contact">
