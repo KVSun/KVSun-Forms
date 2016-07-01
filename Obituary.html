@@ -36,7 +36,7 @@
 			<fieldset id="obituary_contact">
 				<legend>Contact and Billing</legend>
 				<label for="obituary_contact_name">Name:</label>
-				<input type="text" name="obituary[contact][name]" required />
+				<input type="text" name="obituary[contact][name]" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
 				<br />
 				<label for="obituary_contact_tel">Phone:</label>
 				<input type="tel" name="obituary[contact][tel]" id="obituary_contact_tel" placeholder="+17603791234" required />
@@ -45,10 +45,10 @@
 				<input type="email" name="obituary[contact][email]" id="obituary_contact_email" placeholder="user@example.com" required />
 				<br />
 				<a href="#obituary_deceased" role="button">Previous</a>
+				<hr />
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
 			</fieldset>
-			<hr />
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
 		</form>
 	</body>
 </html>
