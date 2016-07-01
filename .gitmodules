@@ -13,3 +13,6 @@
 [submodule "stylesheets/normalize"]
 	path = stylesheets/normalize
 	url = git://github.com/necolas/normalize.css.git
+[submodule "images/sun-icons"]
+	path = images/sun-icons
+	url = git://github.com/KVSun/sun-icons.git
