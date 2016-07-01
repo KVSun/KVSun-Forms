@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wedding</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="stylesheets/styles/import.css" media="all" />
+		<script src="scripts/custom.js" async></script>
+	</head>
+	<body>
+		<nav id="nav"></nav>
+		<form name="wedding" method="post" class="tabbed">
+			<fieldset id="wedding_info">
+				<legend>Wedding Info</legend>
+				<label for="wedding_info_date">Wedding Date</label>
+				<input type="date" name="wedding[info][date]" id="wedding_info_date" placeholder="YYY-MM-DD" autofocus required />
+				<br />
+				<label for="wedding_info_loc">Location</label>
+				<input type="text" name="wedding[info][loc]" id="wedding_info_loc" patttern="[\w\., ]+" placeholder="123 Some St." required />
+				<br />
+				<label for="wedding_info_minister">Minister's name and title</label>
+				<input tpye="text" name="wedding[info][minister]" id="wedding_info_minister" placeholder="Title First Last" pattern="[\w\. ]+" />
+				<br />
+				<label for="wedding_info_givenBy">Bride is given in marriage by</label>
+				<input type="text" name="wedding[info][givenBy]" placeholder="First Last, Relationship" pattern="[\w\., ]+" />
+				<br />
+				<label for="wedding_info_photo">Photo</label>
+				<input type="file" name="wedding[info][photo]" id="wedding_info_photo" accept="image/*" />
+				<hr />
+				<a href="#wedding_bride" role="button">Next</a>
+		</fieldset>
+		<fieldset id="wedding_bride">
+			<legend>Bride's Info</legend>
+			<label for="wedding_bride_name">Name</label>
+			<input type="text" name="wedding[bride][name]" id="wedding_bride_name" placeholder="First Last" pattern="[\w\. ]+" required/>
+			<br />
+			<label for="wedding_bride_info">Education and Occupation</label>
+			<input type="text" name="wedding[bride][info]" id="wedding_bride_info" placeholder="Enter bride's education and occupation" />
+			<br />
+			<label for="wedding_bride_parents">Names of bride's parents</label>
+			<input type="text" name="wedding[bride][parents]" id="wedding_bride_parents" placeholder="John Smith, Jane Smith" pattern="[\w\. ]+, [\w\. ]+" />
+			<br />
+			<label for="wedding_bride_address">Address</label>
+			<input type="text" name="wedding[bride][address]" id="wedding_bride_address" placeholder="123 Some St." pattern="[\w\. ]+" />
+			<hr />
+			<a href="#wedding_info" role="button">Prev</a>
+			<a href="#wedding_groom" role="button">Next</a>
+		</fieldset>
+		<fieldset id="wedding_groom">
+			<legend>Bridegroom's Info</legend><label for="wedding_bride_name"></label>
+			<label for="wedding_groom_name">Name</label>
+			<input type="text" name="wedding[groom][name]" id="wedding_groom_name" placeholder="First Last" pattern="[\w\. ]+" required/>
+			<br />
+			<label for="wedding_groom_info">Education and Occupation</label>
+			<input type="text" name="wedding[groom][info]" id="wedding_groom_info" placeholder="Enter bridegroom's education and occupation" />
+			<br />
+			<label for="wedding_groom_parents">Names of bridegroom's parents</label>
+			<input type="text" name="wedding[groom][parents]" id="wedding_groom_parents" placeholder="John Smith, Jane Smith" pattern="[\w\. ]+, [\w\. ]+" />
+			<br />
+			<label for="wedding_groom_address">Address</label>
+			<input type="text" name="wedding[groom][address]" id="wedding_groom_address" placeholder="123 Some St." pattern="[\w\. ]+" />
+			<hr />
+			<a href="#wedding_bride" role="button">Prev</a>
+			<a href="#wedding_party" role="button">Next</a>
+		</fieldset>
+		<fieldset id="wedding_party">
+			<legend>Wedding Party Info</legend>
+			<strong>Maid or Matron of Honor?</strong>
+			<br />
+			<input type="radio" name="wedding[party][mHonor]" id="wedding_party_mHonor_maid" value="Maid of Honor" />
+			<label for="wedding_party_mHonor_maid">Maid of Honor</label>
+			<input type="radio" name="wedding[party][mHonor]" id="wedding_party_mHonor_matron" value="Matron of Honor" />
+			<label for="wedding_party_mHonor_matron">Matron of Honor</label>
+			<br />
+			<label for="wedding_party_mHonorNameandCity">Name and City</label>
+			<textarea name="wedding[party][mHonorNameandCity]" id="wedding_party_mHonorNameandCity" placeholder="First Last, City"></textarea>
+			<br />
+			<label for="wedding_party_bridesmaids">Bridesmades, cities</label>
+			<textarea name="wedding[party][bridesmaids]" id="wedding_party_bridesmaids" placeholder="First Last, City; ..."></textarea>
+			<br />
+			<label for="wedding_party_bestMan">Best man, city</label>
+			<textarea name="wedding[party][bestMan]" id="wedding_party_bestMan" placeholder="First Last, City"></textarea>
+			<br />
+			<label for="wedding_party_bridesmaids">Flower girl, city</label>
+			<textarea name="wedding[party][flowergirl]" id="wedding_party_flowergirl" placeholder="First Last, City"></textarea>
+			<br />
+			<label for="wedding_party_ringbearer">Ring bearer, city</label>
+			<textarea name="wedding[party][ringbearer]" id="wedding_party_ringbearer" placeholder="First Last, City"></textarea>
+			<br />
+			<label for="wedding_party_ushers">Ushers</label>
+			<textarea name="wedding[party][ushers]" id="wedding_party_ushers" placeholder="First Last, ..."></textarea>
+			<br />
+			<label for="wedding_party_music">Music for the ceremony provided by</label>
+			<textarea name="wedding[party][music]" id="wedding_party_music" placeholder="Band or D.J."></textarea>
+			<br />
+			<label for="wedding_party_reception">Reception</label>
+			<textarea name="wedding[party][reception]" id="wedding_party_reception" placeholder="Time, location, instructions, etc."></textarea>
+			<br />
+			<label for="wedding_party_destination">Destination of wedding trip</label>
+			<textarea name="wedding[party][destination]" id="wedding_party_destination" placeholder="Enter trip details"></textarea>
+			<br />
+			<label for="wedding_party_address">Address of newlyweds</label>
+			<textarea name="wedding[party][address]" id="wedding_party_address" placeholder="Street address, City"></textarea>
+			<hr />
+			<a href="#wedding_groom" role="button">Prev</a>
+			<a href="#wedding_contact" role="button">Next</a>
+		</fieldset>
+		<fieldset id="wedding_contact">
+			<legend>Contact Info</legend>
+			<label for="wedding_contact_name">Name</label>
+			<input type="text" name="wedding[contact][name]" id="wedding_contact_name" placeholder="First Last" pattern="[\w\. ]+" requierd />
+			<br />
+			<label for="wedding_contact_tel">Phone</label>
+			<input type="tel" name="wedding[contact][tel]" id="wedding_contact_tel" placeholder="17603793667" required="" />
+			<br />
+			<label for="wedding_contact_email">E-mail Address</label>
+			<input type="email" name="wedding[contact][email]" id="wedding_contact_email" placeholder="user@example.com" required />
+			<hr />
+			<a href="#wedding_party" role="button">Prev</a>
+			<button type="submit">Submit</button>
+		</fieldset>
+		</form>
+	</body>
+</html>
