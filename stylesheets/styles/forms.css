@@ -1,0 +1,19 @@
+fieldset {
+	margin: .75em;
+	padding: 2em;
+}
+input, label, output, textarea, button {
+	margin: .2em;
+}
+form.tabbed fieldset:not(:target) {
+	display: none;
+}
+button, [role="button"], input[type="submit"], input[type="reset"] {
+	background: linear-gradient(gainsboro, gray);
+	padding: .3em;
+	border-radius: 8%;
+	border: 2px outset #222;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
