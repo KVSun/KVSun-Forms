@@ -4,7 +4,14 @@
 		<title>Submit Obituary</title>
 		<meta charset="utf-8" />
 		<style>
-			fieldset:not(:target) {
+			fieldset {
+				margin: .75em;
+				padding: 2em;
+			}
+			input, label, output, textarea, button {
+				margin: .2em;
+			}
+			form.tabbed fieldset:not(:target) {
 				display: none;
 			}
 			button, [role="button"] {
@@ -21,7 +28,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="obituary" method="post">
+		<form name="obituary" method="post" class="tabbed">
 			<fieldset id="obituary_deceased">
 				<legend>Deceased</legend>
 				<label for="obituary_deceased_name">Name:</label>
@@ -30,9 +37,21 @@
 				<label for="obituary_deceased_obituary">Obituary</label>
 				<textarea name="obituary[deceased][obituary]" required></textarea>
 				<br />
-				<label for="obituary_deceased_deathDate">Date of Death:</label>
-				<input type="date" name="obituary[deceased][death_date]" id="obituary_deceased_deathDate" placeholder="2016-06-30" />
+				<label for="obituary_deceased_birthDate">Date of Death:</label>
+				<input type="date" name="obituary[deceased][birthDate]" id="obituary_deceased_birthDate" placeholder="2016-06-30" />
 				<br />
+				<label for="obituary_deceased_deathDate">Date of Death:</label>
+				<input type="date" name="obituary[deceased][deathDate]" id="obituary_deceased_deathDate" placeholder="2016-06-30" />
+				<br />
+				<!-- <em>There is an additional $5 charge for a photo</em> -->
+				<label for="obituary_deceased_usePhoto"><em>Add a photo for $5?</em></label>
+				<input type="checkbox" name="obituary[deceased][usePhoto]" data-visibility-target="#obit_photo" />
+				<br />
+				<div id="obit_photo" hidden>
+					<label for="obituary_deceased_photo">Photo:</label>
+					<input type="file" name="obituary[deceased][photo]" id="obituary_deceased_photo" accept="image/*" placeholder="Upload image" />
+				</div>
+				<a href="#obituary_contact" role="button">Next</a>
 			</fieldset>
 			<fieldset id="obituary_contact">
 				<legend>Contact and Billing</legend>
@@ -44,6 +63,8 @@
 				<br />
 				<label for="obituary_contact_email">E-Mail Address:</label>
 				<input type="email" name="obituary[contact][email]" id="obituary_contact_email" placeholder="user@example.com" required />
+				<br />
+				<a href="#obituary_deceased" role="button">Previous</a>
 			</fieldset>
 			<hr />
 			<button type="submit">Submit</button>
