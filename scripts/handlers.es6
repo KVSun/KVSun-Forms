@@ -21,3 +21,8 @@ export function forms(form) {
 		});
 	});
 }
+
+export function visibilityToggle() {
+	let target = document.querySelector(this.dataset.visibilityTarget);
+	this.checked ? target.removeAttribute('hidden') : target.setAttribute('hidden', '');
+}

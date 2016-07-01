@@ -8,4 +8,5 @@ window.addEventListener('load', () => {
 	});
 
 	$('fieldset[id]').forEach(fieldsetNav);
+	$('[data-visibility-target]').forEach(input => input.addEventListener('click', Handler.visibilityToggle));
 });
