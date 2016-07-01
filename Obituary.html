@@ -11,14 +11,14 @@
 		<form name="obituary" method="post" class="tabbed">
 			<fieldset id="obituary_text">
 				<legend>Obituary</legend>
-				<textarea name="obituary[text]" cols="80" rows="35" required></textarea>
+				<textarea name="obituary[text]" cols="80" rows="35" autofocus required></textarea>
 				<br />
 				<a href="#obituary_deceased" role="button">Next</a>
 			</fieldset>
 			<fieldset id="obituary_deceased">
 				<legend>Deceased</legend>
-				<label for="obituary_deceased_name">Name:</label>
-				<input type="text" name="obituary[deceased][name]" id="obituary_deceased_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" autofocus required />
+				<label for="obituary_deceased_name">Name</label>
+				<input type="text" name="obituary[deceased][name]" id="obituary_deceased_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
 				<br />
 				<label for="obituary_deceased_birthDate">Date of Death:</label>
 				<input type="date" name="obituary[deceased][birthDate]" id="obituary_deceased_birthDate" placeholder="2016-06-30" />
