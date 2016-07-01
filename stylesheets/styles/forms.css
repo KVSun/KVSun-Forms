@@ -5,6 +5,9 @@ fieldset {
 input, label, output, textarea, button {
 	margin: .2em;
 }
+form.tabbed fieldset:target {
+	animation: door 400ms;
+}
 form.tabbed fieldset:not(:target) {
 	display: none;
 }
