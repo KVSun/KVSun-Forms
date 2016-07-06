@@ -29,7 +29,7 @@ unset($url->query);
 $dom->head->append('meta', null, ['name' => 'viewport', 'content' => 'width=device-width']);
 $url->path = 'scripts/custom.js';
 $dom->head->append('script', null, ['src' => $url]);
-$url->path = 'stylesheets/styles/import.css';
+$url->path = 'stylesheets/styles/styles.css';
 $dom->head->append('link', null, ['rel' => 'stylesheet', 'href' => $url]);
 $url->path = 'images/sun-icons/any.svg';
 $dom->head->append('link', null, ['rel' => 'icon', 'href' => $url, 'type' => 'image/svg+xml', 'sizes' => 'any']);
