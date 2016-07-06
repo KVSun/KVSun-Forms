@@ -8,8 +8,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<a href="http://www.kernvalleysun.com/site/forms/announcements/engagement/" target="_blank">Engagement Form</a>
-		<form name="engagement" method="post" class="tabbed">
+		<form name="engagement" method="POST" enctype="multipart/form-data" class="tabbed">
 			<datalist id="engagement_cityList">
 				<option value="Bodfish">Bodfish</option>
 				<option value="Caliente">Caliente</option>
@@ -31,7 +30,7 @@
 				<br />
 				<b>Address</b><br />
 				<label for="engagement_bride_address">Street</label>
-				<input type="text" name="engagement[bride][address]" id="engagement_bride_address" placeholder="123 Some St." required />
+				<input type="text" name="engagement[bride][address]" id="engagement_bride_address" placeholder="123 Some St." pattern="[\w\. ]+" required />
 				<br />
 				<label for="engagement_bride_city">City</label>
 				<input type="text" name="engagement[bride][city]" id="engagement_bride_city" placeholder="City Name" list="engagement_cityList" pattern="[A-z\. ]+" required />
@@ -132,9 +131,9 @@
 				<input type="text" name="engagement[bride][parentNames]" id="engagement_bride_parentNames" placeholder="First and last names" pattern="[A-z\.,&amp; ]+" />
 				<br />
 				<b>Parents' Address</b><br />
-				<input type="text" name="engagement[bride][parentAddress]" id="engagement_bride_parentAddress" placeholder="123 Some St." />
+				<input type="text" name="engagement[bride][parentAddress]" id="engagement_bride_parentAddress" placeholder="123 Some St." pattern="[\w\. ]+"/>
 				<br />
-				<input type="text" name="engegement[bride][parentCity]" id="engagement_bride_parentCity" placeholder="City Name" list="engagement_cityList" pattern="[\w\. ]+" />
+				<input type="text" name="engegement[bride][parentCity]" id="engagement_bride_parentCity" placeholder="City Name" list="engagement_cityList" pattern="[A-z\. ]+" />
 				<select name="engagement[bride][parentState]" id="engagement_bride_parentState">
 					<optgroup label="United States">
 						<option value="AL">Alabama</option>
@@ -230,7 +229,7 @@
 				<br />
 				<b>Address</b><br />
 				<label for="engagement_groom_address">Street</label>
-				<input type="text" name="engagement[groom][address]" id="engagement_groom_address" placeholder="123 Some St." required />
+				<input type="text" name="engagement[groom][address]" id="engagement_groom_address" placeholder="123 Some St." pattern="[\w\. ]+" required />
 				<br />
 				<label for="engagement_groom_city">City</label>
 				<input type="text" name="engagement[groom][city]" id="engagement_groom_city" placeholder="City Name" list="engagement_cityList" pattern="[A-z\. ]+" required />
@@ -331,7 +330,7 @@
 				<input type="text" name="engagement[groom][parentNames]" id="engagement_groom_parentNames" placeholder="First and last names" pattern="[A-z\.,&amp; ]+" />
 				<br />
 				<b>Parents' Address</b><br />
-				<input type="text" name="engagement[groom][parentAddress]" id="engagement_groom_brideAddress" placeholder="123 Some St." />
+				<input type="text" name="engagement[groom][parentAddress]" id="engagement_groom_brideAddress" placeholder="123 Some St." pattern="[\w\. ]+" />
 				<br />
 				<input type="text" name="engegement[groom][parentCity]" id="engagement_groom_parentCity" placeholder="City Name" list="engagement_cityList" pattern="[\w\. ]+" />
 				<select name="engagement[groom][parentState]" id="engagement_groom_parentState">
@@ -437,7 +436,7 @@
 				<input type="text" name="engagement[wedding][address]" id="engagement_wedding_address" placeholder="123 Some St." pattern="[\w\. ]+" />
 				<br />
 				<label for="engagement_wedding_city">City</label>
-				<input type="text" name="enagement[wedding][city]" id="engagement_wedding_city" placeholder="City Name" list="engagement_cityList" />
+				<input type="text" name="enagement[wedding][city]" id="engagement_wedding_city" placeholder="City Name" list="engagement_cityList" pattern="[A-z\. ]+" />
 				<br />
 				<label for="engagement_wedding_state">State</label>
 				<select name="engagement[wedding][state]" id="engagement_weddingstate">
@@ -528,7 +527,7 @@
 				</select>
 				<br />
 				<label for="engagement_wedding_photo">Adda a photo</label>
-				<input type="photo" name="enagement[wedding][photo]" id="engagement_wedding_photo" />
+				<input type="file" name="enagement[wedding][photo]" id="engagement_wedding_photo" />
 				<br />
 				<a href="#engagement_groom" role="button">Prev</a>
 				<a href="#engagement_contact" role="button">Next</a>

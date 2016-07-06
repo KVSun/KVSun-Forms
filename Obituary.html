@@ -8,23 +8,23 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="obituary" method="post" class="tabbed">
+		<form name="obituary" method="POST" enctype="multipart/form-data" class="tabbed">
 			<fieldset id="obituary_text">
 				<legend>Obituary</legend>
-				<textarea name="obituary[text]" cols="80" rows="35" autofocus required></textarea>
+				<textarea name="obituary[text]" cols="80" rows="25" autofocus required></textarea>
 				<br />
 				<a href="#obituary_deceased" role="button">Next</a>
 			</fieldset>
 			<fieldset id="obituary_deceased">
 				<legend>Deceased</legend>
 				<label for="obituary_deceased_name">Name</label>
-				<input type="text" name="obituary[deceased][name]" id="obituary_deceased_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
+				<input type="text" name="obituary[deceased][name]" id="obituary_deceased_name" placeholder="John Smith" pattern="[A-z\. ]+" required />
 				<br />
 				<label for="obituary_deceased_birthDate">Date of Death:</label>
-				<input type="date" name="obituary[deceased][birthDate]" id="obituary_deceased_birthDate" placeholder="2016-06-30" />
+				<input type="date" name="obituary[deceased][birthDate]" id="obituary_deceased_birthDate" placeholder="YYYY-MM-DD" />
 				<br />
 				<label for="obituary_deceased_deathDate">Date of Death:</label>
-				<input type="date" name="obituary[deceased][deathDate]" id="obituary_deceased_deathDate" placeholder="2016-06-30" />
+				<input type="date" name="obituary[deceased][deathDate]" id="obituary_deceased_deathDate" placeholder="YYYY-MM-DD" />
 				<br />
 				<label for="obituary_deceased_usePhoto"><em>Add a photo for $5?</em></label>
 				<input type="checkbox" name="obituary[deceased][usePhoto]" data-visibility-target="#obit_photo" />
@@ -39,10 +39,10 @@
 			<fieldset id="obituary_contact">
 				<legend>Contact and Billing</legend>
 				<label for="obituary_contact_name">Name:</label>
-				<input type="text" name="obituary[contact][name]" id="obituary_contact_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
+				<input type="text" name="obituary[contact][name]" id="obituary_contact_name" placeholder="John Smith" pattern="[A-z\. ]+" required />
 				<br />
 				<label for="obituary_contact_tel">Phone:</label>
-				<input type="tel" name="obituary[contact][tel]" id="obituary_contact_tel" placeholder="+17603791234" required />
+				<input type="tel" name="obituary[contact][tel]" id="obituary_contact_tel" placeholder="17603791234" required />
 				<br />
 				<label for="obituary_contact_email">E-Mail Address:</label>
 				<input type="email" name="obituary[contact][email]" id="obituary_contact_email" placeholder="user@example.com" required />
