@@ -1,25 +1,16 @@
-export function forms(form) {
-	form.addEventListener('submit', submit => {
-		submit.preventDefault();
-		let url = new URL(submit.target.action, location.origin);
-		let body = new FormData(submit.target);
-		let headers = new Headers();
+import {parseResponse as parse, reportError as report} from './std-js/functions.es6';
+import handleJSON from './std-js/json_response.es6';
+export function forms(submit) {
+	submit.preventDefault();
 
-		fetch(url, {
-			body,
-			headers
-		}).then(resp => {
-			if (resp.ok) {
-				return resp.json();
-			} else {
-				throw new Error(`<${resp.url}> ${resp.statusText}`);
-			}
-		}).then(json => {
-			console.info(json);
-		}).error(error => {
-			console.error(error);
-		});
-	});
+	let url = new URL(submit.target.action, location.origin);
+	let headers = new Headers();
+	let body = new FormData(submit.target);
+	fetch(url, {
+		body,
+		headers,
+		method: 'POST'
+	}).then(parse).then(handleJSON).catch(report);
 }
 
 export function visibilityToggle() {

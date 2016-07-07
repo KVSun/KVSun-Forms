@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="wedding" method="post" class="tabbed">
+		<form name="wedding" method="POST" enctype="multipart/form-data" class="tabbed">
 			<fieldset id="wedding_info">
 				<legend>Wedding Info</legend>
 				<label for="wedding_info_date">Wedding Date</label>
@@ -18,10 +18,10 @@
 				<input type="text" name="wedding[info][loc]" id="wedding_info_loc" patttern="[\w\., ]+" placeholder="123 Some St." required />
 				<br />
 				<label for="wedding_info_minister">Minister's name and title</label>
-				<input tpye="text" name="wedding[info][minister]" id="wedding_info_minister" placeholder="Title First Last" pattern="[\w\. ]+" />
+				<input tpye="text" name="wedding[info][minister]" id="wedding_info_minister" placeholder="Title First Last" pattern="[A-z\. ]+" />
 				<br />
 				<label for="wedding_info_givenBy">Bride is given in marriage by</label>
-				<input type="text" name="wedding[info][givenBy]" placeholder="First Last, Relationship" pattern="[\w\., ]+" />
+				<input type="text" name="wedding[info][givenBy]" placeholder="First Last, Relationship" pattern="[A-z\., ]+" />
 				<br />
 				<label for="wedding_info_photo">Photo</label>
 				<input type="file" name="wedding[info][photo]" id="wedding_info_photo" accept="image/*" />
@@ -37,7 +37,7 @@
 			<textarea name="wedding[bride][info]" id="wedding_bride_info" placeholder="Enter bride's education and occupation"></textarea>
 			<br />
 			<label for="wedding_bride_parents">Names of bride's parents</label>
-			<input type="text" name="wedding[bride][parents]" id="wedding_bride_parents" placeholder="John Smith, Jane Smith" pattern="[\w\. ]+, [\w\. ]+" />
+			<input type="text" name="wedding[bride][parents]" id="wedding_bride_parents" placeholder="John Smith, Jane Smith" pattern="[A-z\. ]+, [A-z\. ]+" />
 			<br />
 			<label for="wedding_bride_address">Address</label>
 			<input type="text" name="wedding[bride][address]" id="wedding_bride_address" placeholder="123 Some St." pattern="[\w\. ]+" />
@@ -48,13 +48,13 @@
 		<fieldset id="wedding_groom">
 			<legend>Bridegroom's Info</legend><label for="wedding_bride_name"></label>
 			<label for="wedding_groom_name">Name</label>
-			<input type="text" name="wedding[groom][name]" id="wedding_groom_name" placeholder="First Last" pattern="[\w\. ]+" required/>
+			<input type="text" name="wedding[groom][name]" id="wedding_groom_name" placeholder="First Last" pattern="[A-z\. ]+" required/>
 			<br />
 			<label for="wedding_groom_info">Education and Occupation</label>
 			<textarea name="wedding[groom][info]" id="wedding_groom_info" placeholder="Enter bridegroom's education and occupation"></textarea>
 			<br />
 			<label for="wedding_groom_parents">Names of bridegroom's parents</label>
-			<input type="text" name="wedding[groom][parents]" id="wedding_groom_parents" placeholder="John Smith, Jane Smith" pattern="[\w\. ]+, [\w\. ]+" />
+			<input type="text" name="wedding[groom][parents]" id="wedding_groom_parents" placeholder="John Smith, Jane Smith" pattern="[A-z\. ]+, [A-z\. ]+" />
 			<br />
 			<label for="wedding_groom_address">Address</label>
 			<input type="text" name="wedding[groom][address]" id="wedding_groom_address" placeholder="123 Some St." pattern="[\w\. ]+" />

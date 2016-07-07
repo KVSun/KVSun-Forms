@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="birth" method="post" class="tabbed">
+		<form name="birth" method="POST" enctype="multipart/form-data" class="tabbed">
 			<datalist id="birth_cityList">
 				<option value="Bodfish">Bodfish</option>
 				<option value="Caliente">Caliente</option>
@@ -49,7 +49,7 @@
 			<fieldset id="birth_parents">
 				<legend>Parents' Information</legend>
 				<label for="birth_parents_motherName">Mother's Name</label>
-				<input type="text" name="birth[parents][metherName]" id="birth_parents_motherName" placeholder="First Last" pattern="[A-z\. ]+" required />
+				<input type="text" name="birth[parents][motherName]" id="birth_parents_motherName" placeholder="First Last" pattern="[A-z\. ]+" required />
 				<label for="birth_parents_maidenName">Maiden Name</label>
 				<input type="text" name="birth[parents][maidenName]" id="birth_parents_maidenName" placeholder="Maiden Name" pattern="[A-z]+" required />
 				<br />
@@ -61,7 +61,7 @@
 				<input type="text" name="birth[parents][address]" id="birth_parents_address" placeholder="123 Some St." pattern="[\w\. ]+" />
 				<br />
 				<label for="birth_parents_city">City</label>
-				<input type="text" name="birth[parents][city]" id="birth_parents_city" placeholder="City Name" list="birth_cityList" pattern="[\w\. ]+" />
+				<input type="text" name="birth[parents][city]" id="birth_parents_city" placeholder="City Name" list="birth_cityList" pattern="[A-z\. ]+" />
 				<label for="birth_parents_state">State</label>
 				<select name="birth[parents][state]" id="birth_parents_state">
 					<optgroup label="United States">

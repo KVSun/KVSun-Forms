@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="submitNews" method="post" class="tabbed">
+		<form name="submitNews" method="POST" enctype="multipart/form-data" class="tabbed">
 			<datalist id="submitNews_cityList">
 				<option value="Bodfish">Bodfish</option>
 				<option value="Caliente">Caliente</option>
@@ -25,7 +25,7 @@
 			</datalist>
 			<fieldset id="submitNews_story">
 				<legend>Tell your story</legend>
-				<textarea name="submitNews[story][text]" cols="80" rows="35" placeholder="Tell us what happened..." autofocus required></textarea>
+				<textarea name="submitNews[story][text]" cols="80" rows="25" placeholder="Tell us what happened..." autofocus required></textarea>
 				<br />
 				<label for="submitNews_story_photo">Add a photo</label>
 				<input type="file" accept="image/*" name="submitNews[story][photo]" id="submitNews_story_photo" />
@@ -35,13 +35,13 @@
 			<fieldset id="submitNews_contact">
 				<legend>Contact Info</legend>
 				<label for="submitNews_contact_name">Name:</label>
-				<input type="text" name="submitNews[contact][name]" id="submitNews_contact_name" placeholder="John Smith" pattern="[\w]+ ([\w]\.? )?[\w]+" required />
+				<input type="text" name="submitNews[contact][name]" id="submitNews_contact_name" placeholder="John Smith" pattern="[A-z\. ]+" required />
 				<br />
 				<label for="submitNews_contact_address">Address</label>
 				<input type="text" name="submitNews[contact][address]" id="submitNews_contact_address" placeholder="123 Some St." pattern="[\w\. ]+" />
 				<br />
 				<label for="submitNews_contact_city">City</label>
-				<input type="text" name="submitNews[contact][city]" id="submitNews_contact_city" list="submitNews_cityList" placeholder="Enter city" pattern="[\w\. ]+" required />
+				<input type="text" name="submitNews[contact][city]" id="submitNews_contact_city" list="submitNews_cityList" placeholder="Enter city" pattern="[A-z\. ]+" required />
 				<br />
 				<label for="submitNews_contact_state">State or Providence</label>
 				<select name="submitNews[contact][state]" id="submitNews_contact_state">
@@ -134,7 +134,7 @@
 				<input type="number" name="submitNews[contact][zip]" id="submitNews_contact_zip" min="10000" max="99999" placeholder="93240" required />
 				<br />
 				<label for="submitNews_contact_tel">Phone:</label>
-				<input type="tel" name="submitNews[contact][tel]" id="submitNews_contact_tel" placeholder="+17603791234" required />
+				<input type="tel" name="submitNews[contact][tel]" id="submitNews_contact_tel" placeholder="17603791234" required />
 				<br />
 				<label for="submitNews_contact_email">E-Mail Address:</label>
 				<input type="email" name="submitNews[contact][email]" id="submitNews_contact_email" placeholder="user@example.com" required />
