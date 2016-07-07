@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<form name="anniversary" method="post" class="tabbed">
+		<form name="anniversary" method="POST" enctype="multipart/form-data" class="tabbed">
 			<datalist id="anniversary_cityList">
 				<option value="Bodfish">Bodfish</option>
 				<option value="Caliente">Caliente</option>
@@ -26,7 +26,7 @@
 			<fieldset id="anniversary_couple">
 				<legend>Couple Info</legend>
 				<label for="anniversary_couple_names">First and last names of couple</label>
-				<input type="text" name="anniversary[couple][names]" id="anniversary_couple_names" placeholder="John and Jane Smith" pattern="[\w\. ]+" autofocus required />
+				<input type="text" name="anniversary[couple][names]" id="anniversary_couple_names" placeholder="John and Jane Smith" pattern="[A-z\. ]+" autofocus required />
 				<br />
 				<b>Address of couple</b>
 				<br />
@@ -171,7 +171,7 @@
 				<input type="text" name="anniversary[celebration][address]" id="anniversary_celebration_address" placeholder="123 Some St." pattern="[\W\. ]+" required />
 				<br />
 				<label for="anniversary_celebration_city">City</label>
-				<input type="text" name="anniversary[celebration][city]" id="anniversary_celebration_city" placeholder="Name of city" pattern="[\w\. ]+" list="anniversary_cityList" required />
+				<input type="text" name="anniversary[celebration][city]" id="anniversary_celebration_city" placeholder="Name of city" pattern="[A-z\. ]+" list="anniversary_cityList" required />
 				<label for="anniversary_celebration_state">State</label>
 				<select name="anniversary[celebration][state]" id="anniversary_celebration_state">
 					<optgroup label="United States">
@@ -271,7 +271,7 @@
 			<fieldset id="anniversary_contact">
 				<legend>Contact Info</legend>
 				<label for="anniversary_contact_name">Name</label>
-				<input type="text" name="anniversary[contact][name]" id="anniversary_contact_name" placeholder="First and last name" pattern="[\w\. ]+" required />
+				<input type="text" name="anniversary[contact][name]" id="anniversary_contact_name" placeholder="First and last name" pattern="[A-z\. ]+" required />
 				<br />
 				<label for="anniversary_contact_tel">Phone</label>
 				<input type="tel" name="anniversary[contact][tel]" id="anniversary_contact_tel" placeholder="17603793667" required />

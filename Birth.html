@@ -1,15 +1,187 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Submit Obituary</title>
+		<title>Birth Announcement</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="stylesheets/styles/import.css" media="all" />
 		<script src="scripts/custom.js" async></script>
 	</head>
 	<body>
 		<nav id="nav"></nav>
-		<a href="http://www.kernvalleysun.com/site/forms/announcements/birth/" target="_blank">Birth form</a>
-		<form name="birth" method="post" class="tabbed">
+		<form name="birth" method="POST" enctype="multipart/form-data" class="tabbed">
+			<datalist id="birth_cityList">
+				<option value="Bodfish">Bodfish</option>
+				<option value="Caliente">Caliente</option>
+				<option value="Canebrake">Canebrake</option>
+				<option value="Havilah">Havilah</option>
+				<option value="Kernville">Kernville</option>
+				<option value="Lake Isabella">Lake Isabella</option>
+				<option value="Mt. Mesa">Mt. Mesa</option>
+				<option value="Onyx">Onyx</option>
+				<option value="South Lake">South Lake</option>
+				<option value="Squirrel Valley">Squirrel Valley</option>
+				<option value="Weldon">Weldon</option>
+				<option value="Wofford Heights">Wofford Heights</option>
+			</datalist>
+			<fieldset id="birth_baby">
+				<legend>Baby's Information</legend>
+				<label for="birth_baby_name">Newborn baby's name</label>
+				<input type="text" name="birth[baby][name]" id="birth_baby_name" placeholder="First Last" pattern="[A-z\. ]+" autofocus required />
+				<br />
+				<label for="birth_baby_born">Date of Birth</label>
+				<input type="date" name="birth[baby][born]" id="birth_baby_born" placeholder="YYYY-MM-DD" required />
+				<br />
+				<label for="birth_baby_weight">Birth Weight</label>
+				<input type="number" name="birth[baby][weight]" id="baby_birth_weight" placeholder="#.#" min="0.1" max="30" step="0.1" required />
+				<span>lbs</span>
+				<br />
+				<b>Gender</b><br />
+				<label for="birth_baby_sex_m">Male</label>
+				<input type="radio" name="birth[baby][sex]" id="birth_baby_sex_m" value="Male" selected />
+				<label for="birth_baby_sex_f">Female</label>
+				<input type="radio" name="birth[baby][sex]" id="birth_baby_sex_f" value="Female" />
+				<br />
+				<label for="birth_baby_photo">Add a photo</label>
+				<input type="file" accept="image/*" name="birth[baby][photo]" id="birth_baby_photo" />
+				<br />
+				<a href="#birth_parents" role="button">Next</a>
+			</fieldset>
+			<fieldset id="birth_parents">
+				<legend>Parents' Information</legend>
+				<label for="birth_parents_motherName">Mother's Name</label>
+				<input type="text" name="birth[parents][motherName]" id="birth_parents_motherName" placeholder="First Last" pattern="[A-z\. ]+" required />
+				<label for="birth_parents_maidenName">Maiden Name</label>
+				<input type="text" name="birth[parents][maidenName]" id="birth_parents_maidenName" placeholder="Maiden Name" pattern="[A-z]+" required />
+				<br />
+				<label for="birth_parents_fatherName">Father's Name</label>
+				<input type="text" name="birth[parents][fatherName]" id="birth_parens_fatherName" placeholder="First Last" pattern="[A-z\. ]+" required />
+				<br />
+				<b>Address</b><br />
+				<label for="birth_parents_address">Street Address</label>
+				<input type="text" name="birth[parents][address]" id="birth_parents_address" placeholder="123 Some St." pattern="[\w\. ]+" />
+				<br />
+				<label for="birth_parents_city">City</label>
+				<input type="text" name="birth[parents][city]" id="birth_parents_city" placeholder="City Name" list="birth_cityList" pattern="[A-z\. ]+" />
+				<label for="birth_parents_state">State</label>
+				<select name="birth[parents][state]" id="birth_parents_state">
+					<optgroup label="United States">
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA" selected>California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="DC">Washington D.C.</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>
+					</optgroup>
+					<optgroup label="U.S. territories">
+						<option value="PR">Puerto Rico</option>
+						<option value="VI">US Virgin Islands</option>
+						<option value="MP">Northern Mariana Islands</option>
+						<option value="MH">Marshall Islands</option>
+						<option value="AS">American Samoa</option>
+						<option value="FM">Federated States of Micronesia</option>
+						<option value="GU">Guam</option>
+						<option value="PW">Palau</option>
+					</optgroup>
+					<optgroup label="Armed Forces">
+						<option value="AA">Armed Forces Americas</option>
+						<option value="AP">Armed Forces Pacific</option>
+						<option value="AE">Armed Forces Europe</option>
+					</optgroup>
+					<optgroup label="Canada">
+						<option value="AB">Alberta, Canada</option>
+						<option value="BC">British Columbia, Canada</option>
+						<option value="MB">Manitoba, Canada</option>
+						<option value="NB">New Brunswick, Canada</option>
+						<option value="NL">Newfoundland, Canada</option>
+						<option value="NS">Nova Scotia, Canada</option>
+						<option value="NT">Northwest Territories, Canada</option>
+						<option value="NU">Nunavut, Canada</option>
+						<option value="ON">Ontario, Canada</option>
+						<option value="PE">Prince Edward Island, Canada</option>
+						<option value="QC">Quebec, Canada</option>
+						<option value="SK">Saskatchewan, Canada</option>
+						<option value="YT">Yukon Territory, Canada</option>
+					</optgroup>
+				</select>
+				<br />
+				<a href="#birth_baby" role="button">Prev</a>
+				<a href="#birth_family" role="button">Next</a>
+			</fieldset>
+			<fieldset id="birth_family">
+				<legend>Additional Family Information</legend>
+				<label for="birth_familiy_siblings">Names and ages of siblings</label>
+				<textarea name="birth[family][siblings]" id="birth_family_siblings" placeholder="Name, age; Name, age"></textarea>
+				<br />
+				<label for="birth_family_grandparents">Grandparent's names and addresses</label>
+				<textarea name="birth[family][grandparents]" id="birth_family_grandparents" placeholder="Bill and Jane Smith, 123 Some St. City Name..."></textarea>
+				<br />
+				<label for="birth_family_greatgrandparents">Great grandparent's names and addresses</label>
+				<textarea name="birth[family][greatgrandparents]" id="birth_family_greatgrandparents" placeholder="Bill and Jane Smith, 123 Some St. City Name..."></textarea>
+				<br />
+				<a href="#birth_parents" role="button">Prev</a>
+				<a href="#birth_contact" role="button">Next</a>
+			</fieldset>
+			<fieldset id="birth_contact">
+				<legend>Contact Info</legend>
+				<label for="birth_contact_name">Name</label>
+				<input type="text" name="birth[contact][name]" id="birth_contact_name" placeholder="First Last" pattern="[A-z\. ]+" required />
+				<br />
+				<label for="birth_contact_tel">Phone</label>
+				<input type="tel" name="birth[contact][tel]" id="birth_contact_tel" placeholder="17603793667" required />
+				<br />
+				<label for="birth_contact_email">E-mail</label>
+				<input type="email" name="birth[contact][email]" id="birth_contact_email" placeholder="user@example.com" required />
+				<br />
+				<a href="#birth_family" role="button">Prev</a>
+				<hr />
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
+			</fieldset>
 		</form>
 	</body>
 </html>
