@@ -1,14 +1,14 @@
 <?php
 namespace Index;
-\set_include_path(dirname(__DIR__));
+\set_include_path(realpath('classes'));
 \spl_autoload_register('spl_autoload');
 \error_reporting(E_ALL);
 
 const EXT = '.html';
 
-function list_forms(\DOMElement $list, $form)
+function list_forms(\DOMElement $list, $form, $ext = EXT)
 {
-	$form = \basename($form, '.html');
+	$form = \basename($form, EXT);
 	$url = new \shgysk8zer0\Core\URL();
 	$url->query = ['form' => $form];
 	$li = $list->append('li');
@@ -18,12 +18,14 @@ function list_forms(\DOMElement $list, $form)
 
 function get_forms($path = __DIR__, $ext = EXT)
 {
-	$path = '/' . \trim($path, '/');
-	return \glob("{$path}/*{$ext}");
+	$path = \rtrim($path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+	return \glob("{$path}*{$ext}");
 }
 
-$dom = new \shgysk8zer0\DOM\HTML();
-$url = new \shgysk8zer0\Core\URL();
+$dom     = new \shgysk8zer0\DOM\HTML();
+$url     = new \shgysk8zer0\Core\URL();
+$headers = new \shgysk8zer0\Core\Headers();
+
 unset($url->query);
 
 $dom->head->append('meta', null, ['name' => 'viewport', 'content' => 'width=device-width']);
