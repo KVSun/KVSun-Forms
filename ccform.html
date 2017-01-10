@@ -1,4 +1,3 @@
-<form method="POST" action="/api.php" name="ccform">
 <fieldset>
 <legend>
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="64" width="64" title="Credit Card info">
@@ -9,7 +8,7 @@
 <input name="ccform[name]" id="ccform-name" placeholder="Name on credit card" pattern="^[A-z]+ ([A-z]+ )?[A-z]+$" autocomplete="cc-name" required="" type="text">
 <br>
 <label for="ccform-ccnum">Credit Card #</label>
-<input name="ccform[ccnum]" id="ccform-ccnum" min="10000000000000" max="99999999999999999" autocomplete="cc-number" size="16" required="" type="number">
+<input name="ccform[ccnum]" id="ccform-ccnum" min="10000000000000" max="99999999999999999" autocomplete="cc-number" size="16" required="" type="number" placeholder="#############">
 <br>
 <label for="ccform-expires-month">Credit Card expiration</label>
 <br>
@@ -21,4 +20,3 @@
 <input name="ccform[csc]" id="ccform-csc" min="100" max="9999" placeholder="####" autocomplete="cc-csc" size="4" required="" type="number">
 </fieldset>
 <button type="submit">Submit</button>
-</form>
