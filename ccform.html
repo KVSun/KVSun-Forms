@@ -1,21 +1,22 @@
-<fieldset>
+<fieldset id="credit-card">
 <legend>
 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="64" width="64" title="Credit Card info">
 		<use xlink:href="http://localhost/images/icons.svg#credit-card"></use>
 	</svg>
 </legend>
-<label for="ccform-name">Name on Card</label>
-<input name="ccform[name]" id="ccform-name" placeholder="Name on credit card" pattern="^[A-z]+ ([A-z]+ )?[A-z]+$" autocomplete="cc-name" required="" type="text">
+<label for="ccform-card-name">Name on Card</label>
+<input name="ccform[card][name]" id="ccform-card-name" placeholder="Name on credit card" pattern="^[A-z]+ ([A-z]+ )?[A-z]+$" autocomplete="cc-name" required="" type="text">
 <br>
-<label for="ccform-ccnum">Credit Card #</label>
-<input name="ccform[ccnum]" id="ccform-ccnum" min="10000000000000" max="99999999999999999" autocomplete="cc-number" size="16" required="" type="number" placeholder="#############">
+<label for="ccform-card-num">Credit Card #</label>
+<input name="ccform[card][num]" id="ccform-card-num" min="10000000000000" max="99999999999999999" autocomplete="cc-number" size="16" required="" type="number" placeholder="#############">
 <br>
-<label for="ccform-expires-month">Credit Card expiration</label>
+<label for="ccform-card-expires-month">Credit Card expiration</label>
 <br>
-<input name="ccform[expires][month]" id="ccform-expires-month" min="1" max="12" placeholder="mm" size="2" maxlength="2" minlength="2" autocomplete="cc-exp-month" required="" type="number">
+<input name="ccform[card][expires][month]" id="ccform-card-expires-month" min="1" max="12" placeholder="mm" size="2" maxlength="2" minlength="2" autocomplete="cc-exp-month" required="" type="number">
 <span>/</span>
-<input name="ccform[expires][year]" id="ccform-expires-year" min="2017" max="2037" autocomplete="cc-exp-year" placeholder="YYYY" maxlength="4" minlength="4" size="4" required="" type="number">
+<input name="ccform[card][expires][year]" id="ccform-card-expires-year" min="2017" max="2037" autocomplete="cc-exp-year" placeholder="YYYY" maxlength="4" minlength="4" size="4" required="" type="number">
 <br>
-<label for="ccform-csc">CSC</label>
-<input name="ccform[csc]" id="ccform-csc" min="100" max="9999" placeholder="####" autocomplete="cc-csc" size="4" required="" type="number">
+<label for="ccform-card-csc">CSC</label>
+<input name="ccform[card][csc]" id="ccform-card-csc" min="100" max="9999" placeholder="####" autocomplete="cc-csc" size="4" required="" type="number">
+<a role="button" href="#billing-address">Next</button>
 </fieldset>
