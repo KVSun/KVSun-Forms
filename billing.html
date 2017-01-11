@@ -1,4 +1,4 @@
-<fieldset>
+<fieldset id="billing-address">
 	<legend>Billing Address</legend>
 	<label for="ccform-billing-first-name">First name</label>
 	<input type="text" name="ccform[billing][first_name]" id="ccform-billing-first-name" pattern="[A-z]+" placeholder="First name" autocomplete="given-name" required/>
@@ -6,6 +6,8 @@
 	<label for="ccform-billing-last-name">Last name</label>
 	<input type="text" name="ccform[billing][last_name]" id="ccform-billing-last-name" pattern="[A-z\.\- ]+" placeholder="Last name" autocomplete="family-name" required/>
 	<br/>
+	<label for="ccform-billing-company">Company</label>
+	<input type="text" name="ccform[billing][company]" id="ccform-billing-company" placeholder="Name of business" pattern="[\w\.\ \-]+" autocomplete="organization"/>
 	<label for="ccform-billing-email">@</label>
 	<input type="email" name="ccform[billing][email]" id="ccform-billing-email" placeholder="user@example.com" autocomplete="email" required/>
 	<br/>
@@ -34,4 +36,5 @@
 	<label for="ccform-billing-zip">Zip Code</label>
 	<input type="number" name="ccform[billing][zip]" id="ccform-billing-zip" min="10000" max="99999" placeholder="#####" autocomplete="postal-code" required/>
 	<input type="hidden" name="ccform[billing][country]" value="USA"/>
+	<a role="button" href="#credit-card">Prev</button>
 </fieldset>
