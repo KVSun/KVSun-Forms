@@ -1,9 +1,15 @@
-<form name="login" method="post">
+<form name="login" method="post" id="login-form">
 	<label for="login-email">Email</label>
-	<input type="email" name="login[email]" id="login-email" placeholder="user@example.com" required/>
+	<input type="email" name="login[email]" id="login-email" placeholder="user@example.com" autocomplete="email" required/>
 	<br/>
 	<label for="login-password">Password</label>
-	<input type="password" name="login[password]" id="login-password" placeholder="*******" required/>
+	<input type="password" name="login[password]" id="login-password" placeholder="*******" autocomplete="current-password" required/>
 	<br/>
-	<button type="submit">Submit</label>
+	<label for="login-remember">Remember me</label>
+	<input type="checkbox" name="login[remember]" id="login-remember" checked="true"/>
+	<br/>
+	<button type="submit">Submit</button>
+	<button type="button" data-show-modal="#registration-dialog">Register</button>
+	<hr />
+	<button type="button" data-request="load_form=forgot_password">Forgot your password?</button>
 </form>
