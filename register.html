@@ -1,6 +1,6 @@
 <form name="register" action="/api.php" method="POST" id="registration-form">
 	<label for="register-username">Username</label>
-	<input type="text" name="register[username]" placeholder="Enter username" id="register-username" autocomplete="username" required/>
+	<input type="text" name="register[username]" placeholder="Enter username" id="register-username" pattern="\w{5,20}" autocomplete="username" required/>
 	<br/>
 	<label for="register-name">Name</label>
 	<input type="text" name="register[name]" id="register-name" placeholder="Firstname Lastname" pattern="[A-z]+ [A-z]+" autocomplete="name" required/>
@@ -9,10 +9,10 @@
 	<input type="email" name="register[email]" id="register-email" placeholder="user@example.com" autocomplete="email" required>
 	<br/>
 	<label for="register-password">Password</label>
-	<input type="password" name="register[password]" id="register-password" placeholder="*********" autocomplete="new-password" required/>
+	<input type="password" name="register[password]" id="register-password" placeholder="*********" pattern=".{8,}" autocomplete="new-password" required/>
 	<br/>
 	<label for="register-password-repeat">Repeat password</label>
-	<input type="password" name="register[repeat]" id="register-password-repeat" placeholder="*********" autocomplete="new-password" required/>
+	<input type="password" name="register[repeat]" id="register-password-repeat" placeholder="*********" pattern=".{8,}" autocomplete="new-password" required/>
 	<br/>
 	<button type="submit">Register</button>
 </form>
