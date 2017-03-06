@@ -8,18 +8,19 @@
 	<br/>
 	<label for="ccform-billing-company">Company</label>
 	<input type="text" name="ccform[billing][company]" id="ccform-billing-company" placeholder="Name of business" pattern="[\w\.\ \-]+" autocomplete="organization"/>
-	<label for="ccform-billing-email">@</label>
+	<br/>
+	<label for="ccform-billing-email">Email address</label>
 	<input type="email" name="ccform[billing][email]" id="ccform-billing-email" placeholder="user@example.com" autocomplete="email" required/>
 	<br/>
 	<label for="ccform-billing-tel">Telephone</label>
-	<input type="tel" name="ccform[billing][tel]" id="ccform-billing-tel" placeholder="17603793677" pattern="\d{11}" autocomplete="tel" required/>
+	<input type="tel" name="ccform[billing][tel]" id="ccform-billing-tel" placeholder="17603793677" pattern="(\d-?)?\(?\d{3}(-|\))?\d{3}-?\d{4}" autocomplete="tel" required/>
 	<br/>
 	<label for="ccform-billing-address">Address</label>
 	<input type="text" name="ccform[billing][address]" id="ccform-billing-address" pattern="[A-z0-9\. ]+" placeholder="123 Streetname" autocomplete="street-address" required/>
 	<br/>
 	<label for="ccform-billing-city">City</label>
-	<input type="text" name="ccform[billing][city]" id="ccform-billing-city" pattern="[A-z\. ]+" list="local-cities" placeholder="City" required/>
-	<datalist id="local-cities">
+	<input type="text" name="ccform[billing][city]" id="ccform-billing-city" pattern="[A-z\. ]+" list="local-cities-list" placeholder="City" required/>
+	<datalist id="local-cities-list">
 		<option value="Lake Isabella"/>
 		<option value="Wofford Heights"/>
 		<option value="Kernville"/>
@@ -30,7 +31,7 @@
 	<br/>
 	<label for="ccform-billing-state">State</label>
 	<select name="ccform[billing][state]">
-		<option value="CA">California</option>
+		<option value="CA" selected>California</option>
 	</select>
 	<br/>
 	<label for="ccform-billing-zip">Zip Code</label>
